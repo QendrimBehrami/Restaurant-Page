@@ -10,9 +10,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 6rem auto 3rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Montserrat", cursive;
 }
 
@@ -27,24 +28,94 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1; /* Ensure it stays in the background */
+  /* filter: sepia(10%); */
+  filter: contrast(1.15) saturate(1.1);
+}
+
+header {
+  display: grid;
+  grid-template-columns: 20rem 1fr 20rem;
+  justify-items: stretch; /* Stretch items to fill the cell */
+
+  font-size: 2rem;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 0.5rem 0;
+  color: white;
+}
+
+header > nav {
+  justify-self: center;
+}
+
+header > nav > button {
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: inherit;
+  border: none;
+  color: inherit;
+}
+
+header > nav > button:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: #a0a0a0;
+  cursor: pointer;
+}
+
+header > nav > button:focus {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: white;
+  cursor: pointer;
+}
+
+#booking {
+  justify-self: end;
+  padding-right: 2rem;
+}
+
+#logo {
+  justify-self: start;
+  padding-left: 2rem;
 }
 
 #content {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   z-index: 1;
   color: white;
+  /* align-items: center; */
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  max-width: 50rem;
+  border-radius: 10px;
+}
+
+#home {
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-bottom: 10rem;
 }
 
-#content,
-header,
-footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: sepia(70%);
-  color: white;
-  height: 100%;
-  width: 100%;
+#home > h1 {
+  font-style: italic;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+#home > .text {
+  max-width: 40rem;
+  align-content: center;
+  line-height: 1.4rem;
 }
 
 footer {
@@ -52,6 +123,9 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
 }
 
 footer > a {
