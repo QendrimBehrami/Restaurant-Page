@@ -1,3 +1,77 @@
+@font-face {
+  font-family: "Architects Daughter";
+  src: url("../fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype"),
+    url("../fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 6rem auto 3rem;
+  justify-items: center;
+  font-family: "Montserrat", cursive;
+}
+
+#background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+  background-image: url("../images/skyline.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* Ensure it stays in the background */
+}
+
+#content {
+  z-index: 1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content,
+header,
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: sepia(70%);
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer > a {
+  font-size: 2rem;
+  color: inherit;
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+
+footer > a:visited {
+  color: inherit;
+}
+
+footer > a:hover {
+  transform: scale(1.2);
 }
