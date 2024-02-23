@@ -1,1 +1,4 @@
 node_modules
+dist/*.ttf
+dist/*.js
+dist/*.webp
