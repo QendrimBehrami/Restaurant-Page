@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -64,7 +65,7 @@ header > nav > button:hover {
   cursor: pointer;
 }
 
-header > nav > button:focus {
+header > nav > button.active {
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: white;
@@ -86,23 +87,33 @@ header > nav > button:focus {
   margin-bottom: 6rem;
   z-index: 1;
   color: white;
-  /* align-items: center; */
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  max-width: 50rem;
   border-radius: 10px;
+
+  transition: opacity 0.7s ease-in-out;
+  opacity: 0;
 }
 
-#home {
-  padding: 2rem;
+#home,
+#about,
+#menu {
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 10rem;
 }
 
-#home > h1 {
+#content.fade-in {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+#home > h1,
+#about h1,
+#menu h1 {
   font-style: italic;
 }
 
@@ -112,8 +123,9 @@ h2 {
   letter-spacing: -0.1rem;
 }
 
-#home > .text {
-  max-width: 40rem;
+#home > .text,
+section {
+  max-width: 30rem;
   align-content: center;
   line-height: 1.4rem;
 }
@@ -126,10 +138,11 @@ footer {
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
+  font-size: 0.8rem;
 }
 
 footer > a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: inherit;
   transition: all 0.2s ease;
   opacity: 1;
